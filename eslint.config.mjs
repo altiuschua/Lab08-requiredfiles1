@@ -13,7 +13,9 @@ pluginJs.configs.recommended,
 pluginReact.configs.flat.recommended,
 {
 plugins: {
-security: [pluginSecurity,pluginSecurityNode,pluginNoUnsanitized]
+security: pluginSecurity,
+securityMode: pluginSecurityNode,
+noUnsanitized: pluginNoUnsanitized
 },
 rules: {
 ...pluginJs.configs.recommended.rules,
