@@ -2,6 +2,9 @@ import globals from "globals";
 import pluginJs from "@eslint/js";
 import pluginReact from "eslint-plugin-react";
 import pluginSecurity from "eslint-plugin-security";
+import pluginSecurityNode from "eslint-plugin-security-node";
+import pluginNoUnsanitized from "eslint-plugin-no-unsanitized";
+
 /** @type {import('eslint').Linter.Config[]} */
 export default [
 {files: ["**/*.{js,mjs,cjs,jsx}"]},
@@ -10,7 +13,7 @@ pluginJs.configs.recommended,
 pluginReact.configs.flat.recommended,
 {
 plugins: {
-security: pluginSecurity
+security: [pluginSecurity,pluginSecurityNode,pluginNoUnsanitized]
 },
 rules: {
 ...pluginJs.configs.recommended.rules,
