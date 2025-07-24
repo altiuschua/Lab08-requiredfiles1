@@ -2,6 +2,10 @@ name: ESLint Code Analysis
 
 on: [push, pull_request]
 
+permissions:
+  contents: read              # Required to checkout the code
+  security-events: write      # Required to upload SARIF to Code Scanning API
+
 jobs:
   eslint:
     runs-on: ubuntu-latest
